@@ -3,10 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./Assets/IMG/favicon.png"
+      type="image/x-icon"
+    />
     <link rel="stylesheet" href="./Assets/CSS/home.css" />
+    <link rel="stylesheet" href="./Assets/CSS/homemedia.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
     <title>LaserVPN</title>
   </head>
   <body>
+    <!-- header starts -->
     <header>
       <nav>
         <div class="logo-container">
@@ -25,8 +38,8 @@
         </ul>
 
         <div class="btn-sign">
-          <button class="sign-in">Sign in</button>
-          <button class="sign-up">Sign up</button>
+          <button class="sign-in" onclick="login()">Sign in</button>
+          <button class="sign-up" onclick="signup()">Sign up</button>
         </div>
       </nav>
 
@@ -50,8 +63,8 @@
             <li><a href="#">Pricing</a></li>
             <li><a href="#">Testimonials</a></li>
             <li><a href="#">Help</a></li>
-            <li><button class="sign-in">Sign in</button></li>
-            <li><button class="sign-up">Sign up</button></li>
+            <li><button class="sign-in" onclick="login()">Sign in</button></li>
+            <li><button class="sign-up" onclick="signup()">Sign up</button></li>
           </ul>
           <p id="cancel" onclick="cancel()">&times;</p>
         </div>
@@ -59,9 +72,235 @@
     </header>
 
     <!-- sign and login modals  -->
-    
-    <main>
+    <!-- register modal  -->
+    <div class="modal" id="register">
+      <div class="modal-content">
+        <span class="close" id="close-signup">&times;</span>
+        <div class="modal-header">
+          <h3>Register</h3>
+          <h3>Login</h3>
+        </div>
+        <div class="modal-body">
+          <form action="#">
+            <div class="input-div">
+              <p class="text-p">Sign up with an email</p>
+              <label for="username"></label>
+              <input type="text" placeholder="Username" required />
 
+              <label for="email"></label> <br />
+              <input type="email" placeholder="Email" required />
+              <br />
+              <label for="password"></label>
+              <input type="password" required placeholder="Password" />
+            </div>
+
+            <div class="terms">
+              <input type="checkbox" class="terms-box" required />
+              <p>
+                I agree to the <a href="#">Terms and Conditions</a>,
+                <a href="">Privacy Policy</a> & <a href="">License Agreement</a>
+              </p>
+            </div>
+
+            <div class="btn-div">
+              <button type="submit" class="btn-sign-up">Register</button>
+            </div>
+
+            <div class="or-div">
+              <p>or</p>
+            </div>
+
+            <div class="social-div">
+              <div class="grid-container">
+                <div class="box">
+                  <a href="#"
+                    ><img
+                      src="./Assets/IMG/icons8-apple-30.png"
+                      alt=""
+                      style="width: 30px"
+                  /></a>
+                </div>
+
+                <div class="box">
+                  <a href="#"
+                    ><img
+                      src="./Assets/IMG/icons8-microsoft-48.png"
+                      alt=""
+                      style="width: 30px"
+                  /></a>
+                </div>
+
+                <div class="box">
+                  <a href="#"
+                    ><img
+                      src="./Assets/IMG/icons8-google-48.png"
+                      alt=""
+                      style="width: 30px"
+                  /></a>
+                </div>
+
+                <div class="box">
+                  <a href="#"
+                    ><img
+                      src="./Assets/IMG/icons8-linkedin-48.png"
+                      alt=""
+                      style="width: 30px"
+                  /></a>
+                </div>
+                <div class="box"></div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Login  -->
+
+    <div class="modal" id="login-id">
+      <div class="modal-content">
+        <span class="close" id="close-login">&times;</span>
+        <div class="modal-header">
+          <h2>Login</h2>
+        </div>
+        <div class="modal-body">
+          <form action="#">
+            <div class="input-div">
+              <p class="text-p">Enter a registered email/username</p>
+              <label for="username"></label>
+              <input type="text" placeholder="Username or Email" required />
+              <br />
+              <label for="password"></label>
+              <input type="password" required placeholder="Password" />
+            </div>
+
+            <div class="password-div">
+              <div class="forgot-password">
+                <a href="#">Forgot passcode?</a>
+              </div>
+            </div>
+
+            <div class="btn-div">
+              <button type="submit" class="btn-sign-up">Login</button>
+            </div>
+
+            <div class="or-div">
+              <p>or</p>
+            </div>
+
+            <div class="social-div">
+              <div class="grid-container">
+                <div class="box">
+                  <a href="#"
+                    ><img
+                      src="./Assets/IMG/icons8-apple-30.png"
+                      alt=""
+                      style="width: 30px"
+                  /></a>
+                </div>
+
+                <div class="box">
+                  <a href="#"
+                    ><img
+                      src="./Assets/IMG/icons8-microsoft-48.png"
+                      alt=""
+                      style="width: 30px"
+                  /></a>
+                </div>
+
+                <div class="box">
+                  <a href="#"
+                    ><img
+                      src="./Assets/IMG/icons8-google-48.png"
+                      alt=""
+                      style="width: 30px"
+                  /></a>
+                </div>
+
+                <div class="box">
+                  <a href="#"
+                    ><img
+                      src="./Assets/IMG/icons8-linkedin-48.png"
+                      alt=""
+                      style="width: 30px"
+                  /></a>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- header ends  -->
+    <main>
+      <section class="container-get-started">
+        <div class="content">
+          <p class="las">
+            Want anything to be easy with
+            <span style="font-weight: 700">LaslesVPN</span>
+          </p>
+          <p class="provide">
+            Provide a network for all your needs with ease and fun using
+            LaslesVPN discover interesting features from us.
+          </p>
+          <button>Get Started</button>
+        </div>
+
+        <div class="image">
+          <img src="./Assets/IMG/Illustration 1.svg" alt="" />
+        </div>
+
+        <div class="image-mobile">
+          <div class="contentt">
+            <p class="las">
+              Want anything to be easy with
+              <span style="font-weight: 700">LaslesVPN</span>
+            </p>
+            <p class="provide">
+              Provide a network for all your needs with ease and fun using
+              LaslesVPN discover interesting features from us.
+            </p>
+            <button>Get Started</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="user-count">
+        <div class="box-container1">
+          <div class="inner-box-container">
+            <div class="user-icon">
+              <img src="./Assets/IMG/user.png" alt="user-icon" width="48px" />
+            </div>
+            <div class="users">
+              <h2>90+</h2>
+              <p>Users</p>
+            </div>
+          </div>
+        </div>
+        <div class="box-container2">
+          <div class="inner-box-container">
+            <div class="user-icon">
+              <img src="./Assets/IMG/location.png" alt="user-icon" width="48px" />
+            </div>
+            <div class="users">
+              <h2>30+</h2>
+              <p>Locations</p>
+            </div>
+          </div>
+        </div>
+        <div class="box-container3">
+          <div class="inner-box-container">
+            <div class="user-icon">
+              <img src="./Assets/IMG/Server.png" alt="user-icon" width="48px" />
+            </div>
+            <div class="users">
+              <h2>50+</h2>
+              <p>Servers</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <script src="./Assets/JS/scripts.js"></script>
