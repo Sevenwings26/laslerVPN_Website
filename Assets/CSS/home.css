@@ -78,7 +78,6 @@ header nav ul li a {
 /* main {
 
 } */
-
 .container-get-started,
 .container-provide {
   margin: auto;
@@ -88,7 +87,9 @@ header nav ul li a {
   justify-content: space-between;
   align-items: center;
 }
-
+.container-get-started{
+  display: flex;
+}
 .container-get-started .content {
   width: 50%;
   height: 40vh;
@@ -117,7 +118,9 @@ header nav ul li a {
   color: #ffffff;
   font-size: 15px;
 }
-
+.container-get-started .image{
+  width: 50%;
+}
 .image img {
   width: 100%;
 }
@@ -392,15 +395,14 @@ input {
 
 .plans-container .inner .grid-plans{
   width: 100%;
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 
 .plans-container .inner .grid-plans .grid-box {
   border: 1px solid #DDDDDD;
   background-color: white;
-  width: 30%;
   border-radius: 10px;
   padding-top: 50px;
 }
